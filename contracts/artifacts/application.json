@@ -1,0 +1,73 @@
+{
+    "hints": {
+        "get_team_players": {
+            "structs": {
+                "output": {
+                    "name": "PlayerRecord",
+                    "elements": [
+                        [
+                            "all_players",
+                            "string"
+                        ]
+                    ]
+                }
+            }
+        }
+    },
+    "source": {
+        "approval": "I3ByYWdtYSB2ZXJzaW9uIDgKaW50Y2Jsb2NrIDAgMQpieXRlY2Jsb2NrIDB4CnR4biBOdW1BcHBBcmdzCmludGNfMCAvLyAwCj09CmJueiBtYWluX2w2CnR4bmEgQXBwbGljYXRpb25BcmdzIDAKcHVzaGJ5dGVzIDB4NGVkY2QyNmEgLy8gImFkZF90ZWFtX3BsYXllcnMoYnl0ZVtdLGJ5dGVbXSl2b2lkIgo9PQpibnogbWFpbl9sNQp0eG5hIEFwcGxpY2F0aW9uQXJncyAwCnB1c2hieXRlcyAweDU3YTBkZGVjIC8vICJnZXRfdGVhbV9wbGF5ZXJzKGJ5dGVbXSkoc3RyaW5nKSIKPT0KYm56IG1haW5fbDQKZXJyCm1haW5fbDQ6CnR4biBPbkNvbXBsZXRpb24KaW50Y18wIC8vIE5vT3AKPT0KdHhuIEFwcGxpY2F0aW9uSUQKaW50Y18wIC8vIDAKIT0KJiYKYXNzZXJ0CnR4bmEgQXBwbGljYXRpb25BcmdzIDEKY2FsbHN1YiBnZXR0ZWFtcGxheWVyc183CnN0b3JlIDIKcHVzaGJ5dGVzIDB4MTUxZjdjNzUgLy8gMHgxNTFmN2M3NQpsb2FkIDIKY29uY2F0CmxvZwppbnRjXzEgLy8gMQpyZXR1cm4KbWFpbl9sNToKdHhuIE9uQ29tcGxldGlvbgppbnRjXzAgLy8gTm9PcAo9PQp0eG4gQXBwbGljYXRpb25JRAppbnRjXzAgLy8gMAohPQomJgphc3NlcnQKdHhuYSBBcHBsaWNhdGlvbkFyZ3MgMQpzdG9yZSAwCnR4bmEgQXBwbGljYXRpb25BcmdzIDIKc3RvcmUgMQpsb2FkIDAKbG9hZCAxCmNhbGxzdWIgYWRkdGVhbXBsYXllcnNfNgppbnRjXzEgLy8gMQpyZXR1cm4KbWFpbl9sNjoKdHhuIE9uQ29tcGxldGlvbgppbnRjXzAgLy8gTm9PcAo9PQpibnogbWFpbl9sMTIKdHhuIE9uQ29tcGxldGlvbgppbnRjXzEgLy8gT3B0SW4KPT0KYm56IG1haW5fbDExCnR4biBPbkNvbXBsZXRpb24KcHVzaGludCA0IC8vIFVwZGF0ZUFwcGxpY2F0aW9uCj09CmJueiBtYWluX2wxMAplcnIKbWFpbl9sMTA6CnR4biBBcHBsaWNhdGlvbklECmludGNfMCAvLyAwCiE9CmFzc2VydApjYWxsc3ViIHVwZGF0ZV80CmludGNfMSAvLyAxCnJldHVybgptYWluX2wxMToKdHhuIEFwcGxpY2F0aW9uSUQKaW50Y18wIC8vIDAKIT0KYXNzZXJ0CmNhbGxzdWIgb3B0aW5fNQppbnRjXzEgLy8gMQpyZXR1cm4KbWFpbl9sMTI6CnR4biBBcHBsaWNhdGlvbklECmludGNfMCAvLyAwCj09CmFzc2VydApjYWxsc3ViIGNyZWF0ZV8yCmludGNfMSAvLyAxCnJldHVybgoKLy8gYXV0aF9vbmx5CmF1dGhvbmx5XzA6CnByb3RvIDEgMQpmcmFtZV9kaWcgLTEKZ2xvYmFsIENyZWF0b3JBZGRyZXNzCj09CnJldHN1YgoKLy8gYXV0aF9vbmx5CmF1dGhvbmx5XzE6CnByb3RvIDEgMQpmcmFtZV9kaWcgLTEKZ2xvYmFsIENyZWF0b3JBZGRyZXNzCj09CnJldHN1YgoKLy8gY3JlYXRlCmNyZWF0ZV8yOgpwcm90byAwIDAKcHVzaGJ5dGVzIDB4NzM3MDZmNzI3NCAvLyAic3BvcnQiCnB1c2hieXRlcyAweDQzNTI0OTQzNGI0NTU0IC8vICJDUklDS0VUIgphcHBfZ2xvYmFsX3B1dApyZXRzdWIKCi8vIGF1dGhfb25seQphdXRob25seV8zOgpwcm90byAxIDEKZnJhbWVfZGlnIC0xCmdsb2JhbCBDcmVhdG9yQWRkcmVzcwo9PQpyZXRzdWIKCi8vIHVwZGF0ZQp1cGRhdGVfNDoKcHJvdG8gMCAwCnR4biBTZW5kZXIKY2FsbHN1YiBhdXRob25seV8zCi8vIHVuYXV0aG9yaXplZAphc3NlcnQKaW50Y18xIC8vIDEKcmV0dXJuCgovLyBvcHRfaW4Kb3B0aW5fNToKcHJvdG8gMCAwCmludGNfMSAvLyAxCnJldHVybgoKLy8gYWRkX3RlYW1fcGxheWVycwphZGR0ZWFtcGxheWVyc182Ogpwcm90byAyIDAKYnl0ZWNfMCAvLyAiIgpkdXBuIDIKdHhuIFNlbmRlcgpjYWxsc3ViIGF1dGhvbmx5XzAKLy8gdW5hdXRob3JpemVkCmFzc2VydApwdXNoYnl0ZXMgMHgwMDAzM2IzYjNiIC8vIDB4MDAwMzNiM2IzYgpmcmFtZV9idXJ5IDAKZnJhbWVfZGlnIC0xCmV4dHJhY3QgMiAwCmZyYW1lX2RpZyAwCmV4dHJhY3QgMiAwCmNvbmNhdApmcmFtZV9idXJ5IDEKZnJhbWVfZGlnIDEKbGVuCml0b2IKZXh0cmFjdCA2IDAKZnJhbWVfZGlnIDEKY29uY2F0CmZyYW1lX2J1cnkgMQpmcmFtZV9kaWcgLTIKZXh0cmFjdCAyIDAKYm94X2dldApzdG9yZSA0CnN0b3JlIDMKZnJhbWVfZGlnIC0yCmV4dHJhY3QgMiAwCmxvYWQgMwpib3hfcHV0CmxvYWQgMwpmcmFtZV9kaWcgMQpleHRyYWN0IDIgMApjb25jYXQKZnJhbWVfYnVyeSAyCmZyYW1lX2RpZyAyCmxlbgppdG9iCmV4dHJhY3QgNiAwCmZyYW1lX2RpZyAyCmNvbmNhdApmcmFtZV9idXJ5IDIKZnJhbWVfZGlnIC0yCmV4dHJhY3QgMiAwCmJveF9kZWwKYXNzZXJ0CmZyYW1lX2RpZyAtMgpleHRyYWN0IDIgMApmcmFtZV9kaWcgMgpleHRyYWN0IDIgMApib3hfcHV0CnJldHN1YgoKLy8gZ2V0X3RlYW1fcGxheWVycwpnZXR0ZWFtcGxheWVyc183Ogpwcm90byAxIDEKYnl0ZWNfMCAvLyAiIgp0eG4gU2VuZGVyCmNhbGxzdWIgYXV0aG9ubHlfMQovLyB1bmF1dGhvcml6ZWQKYXNzZXJ0CmZyYW1lX2RpZyAtMQpleHRyYWN0IDIgMApib3hfZ2V0CnN0b3JlIDUKZnJhbWVfYnVyeSAwCnJldHN1Yg==",
+        "clear": "I3ByYWdtYSB2ZXJzaW9uIDgKcHVzaGludCAwIC8vIDAKcmV0dXJu"
+    },
+    "schema": {
+        "local": {
+            "declared": {},
+            "reserved": {}
+        },
+        "global": {
+            "declared": {
+                "sport": {
+                    "type": "bytes",
+                    "key": "sport",
+                    "descr": "Name of the Sport to which this datastore belongs"
+                }
+            },
+            "reserved": {}
+        }
+    },
+    "contract": {
+        "name": "CricketDatastore",
+        "methods": [
+            {
+                "name": "add_team_players",
+                "args": [
+                    {
+                        "type": "byte[]",
+                        "name": "team"
+                    },
+                    {
+                        "type": "byte[]",
+                        "name": "player_data"
+                    }
+                ],
+                "returns": {
+                    "type": "void"
+                },
+                "desc": "Adds a new team member to the team box"
+            },
+            {
+                "name": "get_team_players",
+                "args": [
+                    {
+                        "type": "byte[]",
+                        "name": "team"
+                    }
+                ],
+                "returns": {
+                    "type": "(string)"
+                },
+                "desc": "Adds a new team member to the team box"
+            }
+        ],
+        "networks": {}
+    }
+}

@@ -1,0 +1,209 @@
+#pragma version 8
+intcblock 0 1
+bytecblock 0x
+txn NumAppArgs
+intc_0 // 0
+==
+bnz main_l6
+txna ApplicationArgs 0
+pushbytes 0x4edcd26a // "add_team_players(byte[],byte[])void"
+==
+bnz main_l5
+txna ApplicationArgs 0
+pushbytes 0x57a0ddec // "get_team_players(byte[])(string)"
+==
+bnz main_l4
+err
+main_l4:
+txn OnCompletion
+intc_0 // NoOp
+==
+txn ApplicationID
+intc_0 // 0
+!=
+&&
+assert
+txna ApplicationArgs 1
+callsub getteamplayers_7
+store 2
+pushbytes 0x151f7c75 // 0x151f7c75
+load 2
+concat
+log
+intc_1 // 1
+return
+main_l5:
+txn OnCompletion
+intc_0 // NoOp
+==
+txn ApplicationID
+intc_0 // 0
+!=
+&&
+assert
+txna ApplicationArgs 1
+store 0
+txna ApplicationArgs 2
+store 1
+load 0
+load 1
+callsub addteamplayers_6
+intc_1 // 1
+return
+main_l6:
+txn OnCompletion
+intc_0 // NoOp
+==
+bnz main_l12
+txn OnCompletion
+intc_1 // OptIn
+==
+bnz main_l11
+txn OnCompletion
+pushint 4 // UpdateApplication
+==
+bnz main_l10
+err
+main_l10:
+txn ApplicationID
+intc_0 // 0
+!=
+assert
+callsub update_4
+intc_1 // 1
+return
+main_l11:
+txn ApplicationID
+intc_0 // 0
+!=
+assert
+callsub optin_5
+intc_1 // 1
+return
+main_l12:
+txn ApplicationID
+intc_0 // 0
+==
+assert
+callsub create_2
+intc_1 // 1
+return
+
+// auth_only
+authonly_0:
+proto 1 1
+frame_dig -1
+global CreatorAddress
+==
+retsub
+
+// auth_only
+authonly_1:
+proto 1 1
+frame_dig -1
+global CreatorAddress
+==
+retsub
+
+// create
+create_2:
+proto 0 0
+pushbytes 0x73706f7274 // "sport"
+pushbytes 0x435249434b4554 // "CRICKET"
+app_global_put
+retsub
+
+// auth_only
+authonly_3:
+proto 1 1
+frame_dig -1
+global CreatorAddress
+==
+retsub
+
+// update
+update_4:
+proto 0 0
+txn Sender
+callsub authonly_3
+// unauthorized
+assert
+intc_1 // 1
+return
+
+// opt_in
+optin_5:
+proto 0 0
+intc_1 // 1
+return
+
+// add_team_players
+addteamplayers_6:
+proto 2 0
+bytec_0 // ""
+dupn 2
+txn Sender
+callsub authonly_0
+// unauthorized
+assert
+pushbytes 0x00033b3b3b // 0x00033b3b3b
+frame_bury 0
+frame_dig -1
+extract 2 0
+frame_dig 0
+extract 2 0
+concat
+frame_bury 1
+frame_dig 1
+len
+itob
+extract 6 0
+frame_dig 1
+concat
+frame_bury 1
+frame_dig -2
+extract 2 0
+box_get
+store 4
+store 3
+frame_dig -2
+extract 2 0
+load 3
+box_put
+load 3
+frame_dig 1
+extract 2 0
+concat
+frame_bury 2
+frame_dig 2
+len
+itob
+extract 6 0
+frame_dig 2
+concat
+frame_bury 2
+frame_dig -2
+extract 2 0
+box_del
+assert
+frame_dig -2
+extract 2 0
+frame_dig 2
+extract 2 0
+box_put
+retsub
+
+// get_team_players
+getteamplayers_7:
+proto 1 1
+bytec_0 // ""
+txn Sender
+callsub authonly_1
+// unauthorized
+assert
+frame_dig -1
+extract 2 0
+box_get
+store 5
+frame_bury 0
+retsub

@@ -1,0 +1,36 @@
+{
+    "name": "CricketDatastore",
+    "methods": [
+        {
+            "name": "add_team_players",
+            "args": [
+                {
+                    "type": "byte[]",
+                    "name": "team"
+                },
+                {
+                    "type": "byte[]",
+                    "name": "player_data"
+                }
+            ],
+            "returns": {
+                "type": "void"
+            },
+            "desc": "Adds a new team member to the team box"
+        },
+        {
+            "name": "get_team_players",
+            "args": [
+                {
+                    "type": "byte[]",
+                    "name": "team"
+                }
+            ],
+            "returns": {
+                "type": "(string)"
+            },
+            "desc": "Adds a new team member to the team box"
+        }
+    ],
+    "networks": {}
+}
