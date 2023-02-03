@@ -1,4 +1,5 @@
 import json
+import algosdk
 from algosdk.mnemonic import *
 from algosdk.atomic_transaction_composer import *
 from algosdk.logic import get_application_address
@@ -47,13 +48,14 @@ class CricketDatastoreClient:
             # Create  an app client for our app
             app_id, app_addr, _ = app_client.create()
             print(f"Created Cricket Datastore app at {app_id} {app_addr}")
-            self._app_id = app_id
+            
             app_client.fund(1 * consts.algo)
             print("Funded app")
             app_client.opt_in()
             print("Opted in")
         else:
             app_addr = get_application_address(app_id)
+        self._app_id = app_id
         self._app_address = app_addr
         return app_client
 
@@ -122,16 +124,58 @@ class CricketDatastoreClient:
         print("======== set_team_members_call res.tx_value is: ", res.tx_info)
         return res
 
+    def add_user_squad_call(self, squad_data: str):
+        sp = self._algo_client.suggested_params()
+        sp.flat_fee = True
+        sp.fee = 2000  # cover this and 1 inner transaction
+
+        # print("======= app addr is: ", addr, )
+
+        res = self._algo_app.call(
+            CricketDatastore.add_user_squad,
+            squad_data=bytes(squad_data, encoding='utf-8'),
+            suggested_params=sp,
+            boxes=[[self._app_id, algosdk.encoding.decode_address(self._algo_app.sender)]]
+        )
+        print("======== add_user_squad_call res is: ", res)
+        print("======== add_user_squad_call res.return_value is: ", res.return_value)
+        print("======== add_user_squad_call res.raw_value is: ", res.raw_value)
+        print("======== add_user_squad_call res.tx_id is: ", res.tx_id)
+        print("======== add_user_squad_call res.tx_value is: ", res.tx_info)
+        return res
+
+    def get_user_squad_call(self):
+        sp = self._algo_client.suggested_params()
+        sp.flat_fee = True
+        sp.fee = 2000  # cover this and 1 inner transaction
+
+        res = self._algo_app.call(
+            CricketDatastore.get_user_squads,
+            suggested_params=sp,
+            boxes=[[self._app_id, algosdk.encoding.decode_address(self._algo_app.sender)]]
+        )
+        print("======== get_user_squad_call res is: ", res)
+        print("======== get_user_squad_call res.return_value is: ", res.return_value)
+        print("======== get_user_squad_call res.raw_value is: ", res.raw_value)
+        print("======== get_user_squad_call return string val is: ", type(res.raw_value), res.raw_value.decode())
+        print("======== get_user_squad_call res.tx_id is: ", res.tx_id)
+        print("======== get_user_squad_call res.tx_value is: ", res.tx_info)
+        return res
+
 if __name__ == "__main__":
     print("Starting deploy of the Cricket Datastore App(SC) on Algorand...")
-    # cricketDatastore appId:156675911
-    c = CricketDatastoreClient(156785317)
+    # cricketDatastore appId:156785317
+    c = CricketDatastoreClient(156788073)
     c.get_application_state()
     c.get_application_address()
     print("================ STARTING METHOD CALLS =====================")
     c.set_team_members_call("team01", "ipfs://bafkreieu5hxn662idqac6htp7pyd6gmelkhopgmiw22l5dzhyfkrghy2le")
     print("================ NEXT CALL =====================")
     c.get_team_members_call("team01")
+    print("================ NEXT CALL =====================")
+    c.add_user_squad_call("ipfs://bafkreieu5hxn662idqac6htp7pyd6gmelkhopgmiw22l5dzhyfkrghy2le")
+    print("================ NEXT CALL =====================")
+    c.get_user_squad_call()
     print("================ NEXT CALL =====================")
     # c.get_emissions_rule()
     # print("================ CHANGE =====================")

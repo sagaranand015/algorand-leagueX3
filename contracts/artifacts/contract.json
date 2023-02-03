@@ -2,6 +2,27 @@
     "name": "CricketDatastore",
     "methods": [
         {
+            "name": "add_user_squad",
+            "args": [
+                {
+                    "type": "byte[]",
+                    "name": "squad_data"
+                }
+            ],
+            "returns": {
+                "type": "void"
+            },
+            "desc": "Adds a new squad link to the box storage keyed by user address"
+        },
+        {
+            "name": "get_user_squads",
+            "args": [],
+            "returns": {
+                "type": "(string)"
+            },
+            "desc": "Gets all the squads saved by the user in the user's box"
+        },
+        {
             "name": "add_team_players",
             "args": [
                 {

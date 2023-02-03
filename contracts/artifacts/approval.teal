@@ -1,70 +1,108 @@
 #pragma version 8
 intcblock 0 1
-bytecblock 0x
+bytecblock 0x 0x151f7c75 0x00033b3b3b
 txn NumAppArgs
 intc_0 // 0
 ==
-bnz main_l6
+bnz main_l10
+txna ApplicationArgs 0
+pushbytes 0xc08422d8 // "add_user_squad(byte[])void"
+==
+bnz main_l9
+txna ApplicationArgs 0
+pushbytes 0xa378ccb6 // "get_user_squads()(string)"
+==
+bnz main_l8
 txna ApplicationArgs 0
 pushbytes 0x4edcd26a // "add_team_players(byte[],byte[])void"
 ==
-bnz main_l5
+bnz main_l7
 txna ApplicationArgs 0
 pushbytes 0x57a0ddec // "get_team_players(byte[])(string)"
 ==
-bnz main_l4
+bnz main_l6
 err
-main_l4:
-txn OnCompletion
-intc_0 // NoOp
-==
-txn ApplicationID
-intc_0 // 0
-!=
-&&
-assert
-txna ApplicationArgs 1
-callsub getteamplayers_7
-store 2
-pushbytes 0x151f7c75 // 0x151f7c75
-load 2
-concat
-log
-intc_1 // 1
-return
-main_l5:
-txn OnCompletion
-intc_0 // NoOp
-==
-txn ApplicationID
-intc_0 // 0
-!=
-&&
-assert
-txna ApplicationArgs 1
-store 0
-txna ApplicationArgs 2
-store 1
-load 0
-load 1
-callsub addteamplayers_6
-intc_1 // 1
-return
 main_l6:
 txn OnCompletion
 intc_0 // NoOp
 ==
-bnz main_l12
+txn ApplicationID
+intc_0 // 0
+!=
+&&
+assert
+txna ApplicationArgs 1
+callsub getteamplayers_9
+store 3
+bytec_1 // 0x151f7c75
+load 3
+concat
+log
+intc_1 // 1
+return
+main_l7:
+txn OnCompletion
+intc_0 // NoOp
+==
+txn ApplicationID
+intc_0 // 0
+!=
+&&
+assert
+txna ApplicationArgs 1
+store 1
+txna ApplicationArgs 2
+store 2
+load 1
+load 2
+callsub addteamplayers_8
+intc_1 // 1
+return
+main_l8:
+txn OnCompletion
+intc_0 // NoOp
+==
+txn ApplicationID
+intc_0 // 0
+!=
+&&
+assert
+callsub getusersquads_7
+store 0
+bytec_1 // 0x151f7c75
+load 0
+concat
+log
+intc_1 // 1
+return
+main_l9:
+txn OnCompletion
+intc_0 // NoOp
+==
+txn ApplicationID
+intc_0 // 0
+!=
+&&
+assert
+txna ApplicationArgs 1
+callsub addusersquad_6
+intc_1 // 1
+return
+main_l10:
+txn OnCompletion
+intc_0 // NoOp
+==
+bnz main_l16
 txn OnCompletion
 intc_1 // OptIn
 ==
-bnz main_l11
+bnz main_l15
 txn OnCompletion
 pushint 4 // UpdateApplication
 ==
-bnz main_l10
+bnz main_l14
 err
-main_l10:
+main_l14:
 txn ApplicationID
 intc_0 // 0
 !=
@@ -72,7 +110,7 @@ assert
 callsub update_4
 intc_1 // 1
 return
-main_l11:
+main_l15:
 txn ApplicationID
 intc_0 // 0
 !=
@@ -80,7 +118,7 @@ assert
 callsub optin_5
 intc_1 // 1
 return
-main_l12:
+main_l16:
 txn ApplicationID
 intc_0 // 0
 ==
@@ -137,8 +175,66 @@ proto 0 0
 intc_1 // 1
 return
 
+// add_user_squad
+addusersquad_6:
+proto 1 0
+bytec_0 // ""
+dupn 2
+bytec_2 // 0x00033b3b3b
+frame_bury 0
+frame_dig -1
+extract 2 0
+frame_dig 0
+extract 2 0
+concat
+frame_bury 1
+frame_dig 1
+len
+itob
+extract 6 0
+frame_dig 1
+concat
+frame_bury 1
+txn Sender
+box_get
+store 5
+store 4
+txn Sender
+load 4
+box_put
+load 4
+frame_dig 1
+extract 2 0
+concat
+frame_bury 2
+frame_dig 2
+len
+itob
+extract 6 0
+frame_dig 2
+concat
+frame_bury 2
+txn Sender
+box_del
+assert
+txn Sender
+frame_dig 2
+extract 2 0
+box_put
+retsub
+
+// get_user_squads
+getusersquads_7:
+proto 0 1
+bytec_0 // ""
+txn Sender
+box_get
+store 6
+frame_bury 0
+retsub
+
 // add_team_players
-addteamplayers_6:
+addteamplayers_8:
 proto 2 0
 bytec_0 // ""
 dupn 2
@@ -146,7 +242,7 @@ txn Sender
 callsub authonly_0
 // unauthorized
 assert
-pushbytes 0x00033b3b3b // 0x00033b3b3b
+bytec_2 // 0x00033b3b3b
 frame_bury 0
 frame_dig -1
 extract 2 0
@@ -164,13 +260,13 @@ frame_bury 1
 frame_dig -2
 extract 2 0
 box_get
-store 4
-store 3
+store 8
+store 7
 frame_dig -2
 extract 2 0
-load 3
+load 7
 box_put
-load 3
+load 7
 frame_dig 1
 extract 2 0
 concat
@@ -194,7 +290,7 @@ box_put
 retsub
 
 // get_team_players
-getteamplayers_7:
+getteamplayers_9:
 proto 1 1
 bytec_0 // ""
 txn Sender
@@ -204,6 +300,6 @@ assert
 frame_dig -1
 extract 2 0
 box_get
-store 5
+store 9
 frame_bury 0
 retsub
