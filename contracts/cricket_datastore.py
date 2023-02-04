@@ -85,4 +85,4 @@ class CricketDatastore(Application):
         return Approve()
 
 if __name__ == "__main__":
-    CricketDatastore(version=8).dump("./artifacts")
+    CricketDatastore(version=8).dump("./datastore-artifacts")

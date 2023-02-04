@@ -1,0 +1,72 @@
+{
+    "hints": {},
+    "source": {
+        "approval": "I3ByYWdtYSB2ZXJzaW9uIDgKaW50Y2Jsb2NrIDAgMQpieXRlY2Jsb2NrIDB4IDB4NmM2NTYxNjc3NTY1NWY2ZTYxNmQ2NSAweDZjNjU2MTY3NzU2NTVmNmQ2NTc0NjE2NDYxNzQ2MSAweDYzNmY2ZDcwNjU3NDY5NzQ2OTZmNmU1ZjZlNjE2ZDY1IDB4MDAKdHhuIE51bUFwcEFyZ3MKaW50Y18wIC8vIDAKPT0KYm56IG1haW5fbDYKdHhuYSBBcHBsaWNhdGlvbkFyZ3MgMApwdXNoYnl0ZXMgMHhiNGNhYzY2MyAvLyAiYm9vdHN0cmFwKGJ5dGVbXSxieXRlW10sYnl0ZVtdKXZvaWQiCj09CmJueiBtYWluX2w1CnR4bmEgQXBwbGljYXRpb25BcmdzIDAKcHVzaGJ5dGVzIDB4YTFlM2ZmYTkgLy8gInBhcnRpY2lwYXRlX3dpdGhfdXNlcl9zcXVhZChieXRlW10pYm9vbCIKPT0KYm56IG1haW5fbDQKZXJyCm1haW5fbDQ6CnR4biBPbkNvbXBsZXRpb24KaW50Y18wIC8vIE5vT3AKPT0KdHhuIEFwcGxpY2F0aW9uSUQKaW50Y18wIC8vIDAKIT0KJiYKYXNzZXJ0CnR4bmEgQXBwbGljYXRpb25BcmdzIDEKY2FsbHN1YiBwYXJ0aWNpcGF0ZXdpdGh1c2Vyc3F1YWRfNgpzdG9yZSAzCnB1c2hieXRlcyAweDE1MWY3Yzc1IC8vIDB4MTUxZjdjNzUKYnl0ZWMgNCAvLyAweDAwCmludGNfMCAvLyAwCmxvYWQgMwpzZXRiaXQKY29uY2F0CmxvZwppbnRjXzEgLy8gMQpyZXR1cm4KbWFpbl9sNToKdHhuIE9uQ29tcGxldGlvbgppbnRjXzAgLy8gTm9PcAo9PQp0eG4gQXBwbGljYXRpb25JRAppbnRjXzAgLy8gMAohPQomJgphc3NlcnQKdHhuYSBBcHBsaWNhdGlvbkFyZ3MgMQpzdG9yZSAwCnR4bmEgQXBwbGljYXRpb25BcmdzIDIKc3RvcmUgMQp0eG5hIEFwcGxpY2F0aW9uQXJncyAzCnN0b3JlIDIKbG9hZCAwCmxvYWQgMQpsb2FkIDIKY2FsbHN1YiBib290c3RyYXBfNQppbnRjXzEgLy8gMQpyZXR1cm4KbWFpbl9sNjoKdHhuIE9uQ29tcGxldGlvbgppbnRjXzAgLy8gTm9PcAo9PQpibnogbWFpbl9sMTIKdHhuIE9uQ29tcGxldGlvbgppbnRjXzEgLy8gT3B0SW4KPT0KYm56IG1haW5fbDExCnR4biBPbkNvbXBsZXRpb24KcHVzaGludCA0IC8vIFVwZGF0ZUFwcGxpY2F0aW9uCj09CmJueiBtYWluX2wxMAplcnIKbWFpbl9sMTA6CnR4biBBcHBsaWNhdGlvbklECmludGNfMCAvLyAwCiE9CmFzc2VydApjYWxsc3ViIHVwZGF0ZV8zCmludGNfMSAvLyAxCnJldHVybgptYWluX2wxMToKdHhuIEFwcGxpY2F0aW9uSUQKaW50Y18wIC8vIDAKIT0KYXNzZXJ0CmNhbGxzdWIgb3B0aW5fNAppbnRjXzEgLy8gMQpyZXR1cm4KbWFpbl9sMTI6CnR4biBBcHBsaWNhdGlvbklECmludGNfMCAvLyAwCj09CmFzc2VydApjYWxsc3ViIGNyZWF0ZV8xCmludGNfMSAvLyAxCnJldHVybgoKLy8gYXV0aF9vbmx5CmF1dGhvbmx5XzA6CnByb3RvIDEgMQpmcmFtZV9kaWcgLTEKZ2xvYmFsIENyZWF0b3JBZGRyZXNzCj09CnJldHN1YgoKLy8gY3JlYXRlCmNyZWF0ZV8xOgpwcm90byAwIDAKYnl0ZWNfMSAvLyAibGVhZ3VlX25hbWUiCmJ5dGVjXzAgLy8gIiIKYXBwX2dsb2JhbF9wdXQKYnl0ZWNfMiAvLyAibGVhZ3VlX21ldGFkYXRhIgpieXRlY18wIC8vICIiCmFwcF9nbG9iYWxfcHV0CmJ5dGVjXzMgLy8gImNvbXBldGl0aW9uX25hbWUiCmJ5dGVjXzAgLy8gIiIKYXBwX2dsb2JhbF9wdXQKcmV0c3ViCgovLyBhdXRoX29ubHkKYXV0aG9ubHlfMjoKcHJvdG8gMSAxCmZyYW1lX2RpZyAtMQpnbG9iYWwgQ3JlYXRvckFkZHJlc3MKPT0KcmV0c3ViCgovLyB1cGRhdGUKdXBkYXRlXzM6CnByb3RvIDAgMAp0eG4gU2VuZGVyCmNhbGxzdWIgYXV0aG9ubHlfMgovLyB1bmF1dGhvcml6ZWQKYXNzZXJ0CmludGNfMSAvLyAxCnJldHVybgoKLy8gb3B0X2luCm9wdGluXzQ6CnByb3RvIDAgMAppbnRjXzEgLy8gMQpyZXR1cm4KCi8vIGJvb3RzdHJhcApib290c3RyYXBfNToKcHJvdG8gMyAwCnR4biBTZW5kZXIKY2FsbHN1YiBhdXRob25seV8wCi8vIHVuYXV0aG9yaXplZAphc3NlcnQKYnl0ZWNfMSAvLyAibGVhZ3VlX25hbWUiCmZyYW1lX2RpZyAtMwpleHRyYWN0IDIgMAphcHBfZ2xvYmFsX3B1dApieXRlY18yIC8vICJsZWFndWVfbWV0YWRhdGEiCmZyYW1lX2RpZyAtMgpleHRyYWN0IDIgMAphcHBfZ2xvYmFsX3B1dApieXRlY18zIC8vICJjb21wZXRpdGlvbl9uYW1lIgpmcmFtZV9kaWcgLTEKZXh0cmFjdCAyIDAKYXBwX2dsb2JhbF9wdXQKcmV0c3ViCgovLyBwYXJ0aWNpcGF0ZV93aXRoX3VzZXJfc3F1YWQKcGFydGljaXBhdGV3aXRodXNlcnNxdWFkXzY6CnByb3RvIDEgMQppbnRjXzAgLy8gMApieXRlY18wIC8vICIiCmludGNfMCAvLyAwCmR1cApieXRlY18wIC8vICIiCmludGNfMCAvLyAwCmR1cApieXRlY18wIC8vICIiCmR1cApwdXNoYnl0ZXMgMHgwMDAwIC8vIDB4MDAwMApmcmFtZV9idXJ5IDEKaW50Y18wIC8vIDAKYnl0ZWNfMSAvLyAibGVhZ3VlX25hbWUiCmFwcF9nbG9iYWxfZ2V0X2V4CnN0b3JlIDUKc3RvcmUgNApsb2FkIDUKYnl0ZWNfMSAvLyAibGVhZ3VlX25hbWUiCmFwcF9nbG9iYWxfZ2V0CmZyYW1lX2RpZyAxCmV4dHJhY3QgMiAwCj09CiEKJiYKLy8gVGhlIGFwcCBoYXMgbm90IGJlZW4gYm9vdHN0cmFwZWQgcHJvcGVybHkuIExlYWd1ZSBOYW1lIG1pc3NpbmcKYXNzZXJ0CmludGNfMCAvLyAwCmJ5dGVjXzIgLy8gImxlYWd1ZV9tZXRhZGF0YSIKYXBwX2dsb2JhbF9nZXRfZXgKc3RvcmUgNwpzdG9yZSA2CmxvYWQgNwpieXRlY18yIC8vICJsZWFndWVfbWV0YWRhdGEiCmFwcF9nbG9iYWxfZ2V0CmZyYW1lX2RpZyAxCmV4dHJhY3QgMiAwCj09CiEKJiYKLy8gVGhlIGFwcCBoYXMgbm90IGJlZW4gYm9vdHN0cmFwZWQgcHJvcGVybHkuIExlYWd1ZSBNZXRhZGF0YSBtaXNzaW5nCmFzc2VydAppbnRjXzAgLy8gMApieXRlY18zIC8vICJjb21wZXRpdGlvbl9uYW1lIgphcHBfZ2xvYmFsX2dldF9leApzdG9yZSA5CnN0b3JlIDgKbG9hZCA5CmJ5dGVjXzMgLy8gImNvbXBldGl0aW9uX25hbWUiCmFwcF9nbG9iYWxfZ2V0CmZyYW1lX2RpZyAxCmV4dHJhY3QgMiAwCj09CiEKJiYKLy8gVGhlIGFwcCBoYXMgbm90IGJlZW4gYm9vdHN0cmFwZWQgcHJvcGVybHkuIENvbXBlaXRpb24gbmFtZSBtaXNzaW5nCmFzc2VydAp0eG4gU2VuZGVyCmJveF9nZXQKc3RvcmUgMTEKc3RvcmUgMTAKbG9hZCAxMQpibnogcGFydGljaXBhdGV3aXRodXNlcnNxdWFkXzZfbDIKaW50Y18wIC8vIDAKZnJhbWVfYnVyeSAyCmludGNfMCAvLyAwCmZyYW1lX2J1cnkgMwpmcmFtZV9kaWcgLTEKZnJhbWVfYnVyeSA4CmZyYW1lX2RpZyA4CmZyYW1lX2J1cnkgNwpwdXNoaW50IDI3IC8vIDI3CmZyYW1lX2J1cnkgNQpmcmFtZV9kaWcgNQppdG9iCmV4dHJhY3QgNiAwCmZyYW1lX2RpZyAyCml0b2IKY29uY2F0CmJ5dGVjIDQgLy8gMHgwMAppbnRjXzAgLy8gMApmcmFtZV9kaWcgMwpzZXRiaXQKY29uY2F0CmZyYW1lX2RpZyAyCml0b2IKY29uY2F0CmZyYW1lX2RpZyAyCml0b2IKY29uY2F0CmZyYW1lX2RpZyA3CmNvbmNhdApmcmFtZV9idXJ5IDQKdHhuIFNlbmRlcgpib3hfZGVsCnBvcAp0eG4gU2VuZGVyCmZyYW1lX2RpZyA0CmJveF9wdXQKaW50Y18xIC8vIDEKZnJhbWVfYnVyeSAwCmIgcGFydGljaXBhdGV3aXRodXNlcnNxdWFkXzZfbDMKcGFydGljaXBhdGV3aXRodXNlcnNxdWFkXzZfbDI6CmludGNfMCAvLyAwCmZyYW1lX2J1cnkgMApwYXJ0aWNpcGF0ZXdpdGh1c2Vyc3F1YWRfNl9sMzoKcmV0c3Vi",
+        "clear": "I3ByYWdtYSB2ZXJzaW9uIDgKcHVzaGludCAwIC8vIDAKcmV0dXJu"
+    },
+    "schema": {
+        "local": {
+            "declared": {},
+            "reserved": {}
+        },
+        "global": {
+            "declared": {
+                "league_name": {
+                    "type": "bytes",
+                    "key": "league_name",
+                    "descr": "Name of the league"
+                },
+                "league_metadata": {
+                    "type": "bytes",
+                    "key": "league_metadata",
+                    "descr": "Link to the IPFS file containing the league metadata"
+                },
+                "competition_name": {
+                    "type": "bytes",
+                    "key": "competition_name",
+                    "descr": "Name of the Competition/Match which is in progress"
+                }
+            },
+            "reserved": {}
+        }
+    },
+    "contract": {
+        "name": "LeagueX3",
+        "methods": [
+            {
+                "name": "bootstrap",
+                "args": [
+                    {
+                        "type": "byte[]",
+                        "name": "league_name"
+                    },
+                    {
+                        "type": "byte[]",
+                        "name": "league_metadata"
+                    },
+                    {
+                        "type": "byte[]",
+                        "name": "competition_name"
+                    }
+                ],
+                "returns": {
+                    "type": "void"
+                }
+            },
+            {
+                "name": "participate_with_user_squad",
+                "args": [
+                    {
+                        "type": "byte[]",
+                        "name": "squad_data"
+                    }
+                ],
+                "returns": {
+                    "type": "bool"
+                },
+                "desc": "Adds a new squad link to the box storage keyed by user address"
+            }
+        ],
+        "networks": {}
+    }
+}
