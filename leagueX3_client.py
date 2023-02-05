@@ -11,7 +11,6 @@ from contracts.leagueX3 import LeagueX3
 ACCOUNT_SECRET = to_private_key(ROOT_ACCOUNT_MNEMONIC)
 ACCOUNT_SIGNER = AccountTransactionSigner(ACCOUNT_SECRET)
 
-
 class LeagueX3Client:
     """
     LeagueX3 client interfacing with the CricketDatastore deployed on the algorand blockchain
@@ -115,8 +114,32 @@ class LeagueX3Client:
         print("======== participate_with_user_squad_call res is: ", res)
         print("======== participate_with_user_squad_call res.return_value is: ", res.return_value)
         print("======== participate_with_user_squad_call res.raw_value is: ", res.raw_value)
+        first_val = res.return_value[0]
+        v = ''.join([chr(x) for x in first_val])
+        print("======== participate_with_user_squad_call first_val is: ", first_val, v, type(v))
+        print("======== participate_with_user_squad_call return string val is: ", type(res.raw_value))
         print("======== participate_with_user_squad_call res.tx_id is: ", res.tx_id)
         print("======== participate_with_user_squad_call res.tx_value is: ", res.tx_info)
+        return res
+
+    def get_user_participation_data_call(self):
+        sp = self._algo_client.suggested_params()
+        sp.flat_fee = True
+        sp.fee = 1000  # cover this and 1 inner transaction
+        res = self._algo_app.call(
+            LeagueX3.get_user_participation_data,
+            suggested_params=sp,
+            boxes=[[self._app_id, algosdk.encoding.decode_address(self._algo_app.sender)]]
+        )
+        print("======== get_user_participation_data_call res is: ", res)
+        print("======== get_user_participation_data_call res.return_value is: ", res.return_value)
+        print("======== get_user_participation_data_call res.raw_value is: ", res.raw_value)
+        first_val = res.return_value[0]
+        v = ''.join([chr(x) for x in first_val])
+        print("======== get_user_participation_data_call first_val is: ", first_val, v, type(v))
+        print("======== get_user_participation_data_call return string val is: ", type(res.raw_value))
+        print("======== get_user_participation_data_call res.tx_id is: ", res.tx_id)
+        print("======== get_user_participation_data_call res.tx_value is: ", res.tx_info)
         return res
 
 if __name__ == "__main__":
@@ -124,12 +147,14 @@ if __name__ == "__main__":
     league_metadata = "ipfs://bafkreieu5hxn662idqac6htp7pyd6gmelkhopgmiw22l5dzhyfkrghy2le"
     competition_name = "LudhianaLocalMatch01"
     print(f"Starting deploy of the LeagueX3 App(SC) on Algorand with {league_name}, {league_metadata}, {competition_name}")
-    # LeagueX3 appId:
-    c = LeagueX3Client(156872629)
+    # LeagueX3 appId: 156878525
+    c = LeagueX3Client(157187736)
     c.get_application_state()
     c.get_application_address()
     print("================ BOOTSTRAPCALLING CALL =====================")
     c.bootstrap_app_call(league_name, league_metadata, competition_name)
     print("================ participate_with_user_squad_call CALL =====================")
     c.participate_with_user_squad_call("ipfs://bafkreieu5hxn662idqac6htp7pyd6gmelkhopgmiw22l5dzhyfkrghy2le")
+    print("================ NEXT CALL =====================")
+    c.get_user_participation_data_call()
     print("================ NEXT CALL =====================")

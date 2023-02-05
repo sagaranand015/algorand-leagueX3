@@ -11,6 +11,8 @@ class UserLeagueData(abi.NamedTuple):
     is_winner: abi.Field[abi.Bool]
     prize_val: abi.Field[abi.Uint64]
     prize_nft_id: abi.Field[abi.Uint64]
+    is_participated: abi.Field[abi.Bool]
+    # user_address: abi.Field[abi.Address]
 
 class LeagueX3(Application):
 
@@ -41,7 +43,7 @@ class LeagueX3(Application):
         )
 
     @external
-    def participate_with_user_squad(self, squad_data: abi.DynamicBytes, *, output: abi.Bool):
+    def participate_with_user_squad(self, squad_data: abi.DynamicBytes, *, output: UserLeagueData):
         """
         Adds a new squad link to the box storage keyed by user address
         """
@@ -53,17 +55,29 @@ class LeagueX3(Application):
             contents := BoxGet(Txn.sender()),
             If(contents.hasValue())
             .Then(
-                output.set(False)
+                output.decode(contents.value())
             ).Else(
                 # Add the leaderboard entry to the user_participation mapping with a dummy position
                 (dummy_pos_val := abi.Uint64()).set(int(0)),
                 (dummy_win_val := abi.Bool()).set(False),
-                (u_leaderboard := UserLeagueData()).set(squad_data, dummy_pos_val, dummy_win_val, dummy_pos_val, dummy_pos_val),
+                (is_participated := abi.Bool()).set(True),
+                (u_leaderboard := UserLeagueData()).set(squad_data, dummy_pos_val, dummy_win_val, dummy_pos_val, dummy_pos_val, is_participated),
                 self.user_participation[Txn.sender()].set(u_leaderboard),
-                output.set(True)
+                output.set(squad_data, dummy_pos_val, dummy_win_val, dummy_pos_val, dummy_pos_val, is_participated)
             ),
         )
-    
+
+    @external
+    def get_user_participation_data(self, *, output: UserLeagueData):
+        """
+        Returns the participation data in the box storage for the user
+        """
+        return Seq(
+            contents := BoxGet(Txn.sender()),
+            Assert(contents.hasValue()),
+            output.decode(contents.value()),
+        )
+
     @create
     def create(self):
         return self.initialize_application_state()

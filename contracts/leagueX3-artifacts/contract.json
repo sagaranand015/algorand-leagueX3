@@ -30,9 +30,17 @@
                 }
             ],
             "returns": {
-                "type": "bool"
+                "type": "(byte[],uint64,bool,uint64,uint64,bool)"
             },
             "desc": "Adds a new squad link to the box storage keyed by user address"
+        },
+        {
+            "name": "get_user_participation_data",
+            "args": [],
+            "returns": {
+                "type": "(byte[],uint64,bool,uint64,uint64,bool)"
+            },
+            "desc": "Returns the participation data in the box storage for the user"
         }
     ],
     "networks": {}
