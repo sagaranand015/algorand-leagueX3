@@ -17,6 +17,9 @@ import { Settings } from 'src/@core/context/settingsContext'
 import ModeToggler from 'src/@core/layouts/components/shared-components/ModeToggler'
 import UserDropdown from 'src/@core/layouts/components/shared-components/UserDropdown'
 import NotificationDropdown from 'src/@core/layouts/components/shared-components/NotificationDropdown'
+import { useAuth } from 'src/configs/authProvider'
+import { useEffect, useState } from 'react'
+import algosdk from 'algosdk'
 
 interface Props {
   hidden: boolean
@@ -25,9 +28,34 @@ interface Props {
   saveSettings: (values: Settings) => void
 }
 
+const shortenAddress = (address: string) => {
+  if (address)
+    return address.substring(0, 6) + "..." + address.substring(address.length - 4, address.length)
+}
+
 const AppBarContent = (props: Props) => {
   // ** Props
   const { hidden, settings, saveSettings, toggleNavVisibility } = props
+
+  const client = new algosdk.Algodv2("", "https://testnet-api.algonode.cloud", "");
+
+  const { currentAccount, setCurrentAccount, disconnectAccount } = useAuth()
+  const [accountBalance, setAccountBalance] = useState(0)
+
+  useEffect(() => {
+    const fetchAccountBalance = async (account: any) => {
+      const accountInfo = await client
+        .accountInformation(account)
+        .setIntDecoding(algosdk.IntDecoding.BIGINT)
+        .do();
+
+      setAccountBalance(Number(accountInfo.amount))
+    }
+
+    if (currentAccount) {
+      fetchAccountBalance(currentAccount)
+    }
+  }, [currentAccount])
 
   // ** Hook
   const hiddenSm = useMediaQuery((theme: Theme) => theme.breakpoints.down('sm'))
@@ -35,46 +63,18 @@ const AppBarContent = (props: Props) => {
   return (
     <Box sx={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
       <Box className='actions-left' sx={{ mr: 2, display: 'flex', alignItems: 'center' }}>
-        {hidden ? (
-          <IconButton
-            color='inherit'
-            onClick={toggleNavVisibility}
-            sx={{ ml: -2.75, ...(hiddenSm ? {} : { mr: 3.5 }) }}
-          >
-            <Menu />
-          </IconButton>
-        ) : null}
-        <TextField
-          size='small'
-          sx={{ '& .MuiOutlinedInput-root': { borderRadius: 4 } }}
-          InputProps={{
-            startAdornment: (
-              <InputAdornment position='start'>
-                <Magnify fontSize='small' />
-              </InputAdornment>
-            )
-          }}
-        />
       </Box>
       <Box className='actions-right' sx={{ display: 'flex', alignItems: 'center' }}>
-        {hiddenSm ? null : (
-          <Box
-            component='a'
-            target='_blank'
-            rel='noreferrer'
-            sx={{ mr: 4, display: 'flex' }}
-            href='https://github.com/themeselection/materio-mui-react-nextjs-admin-template-free'
-          >
-            <img
-              height={24}
-              alt='github stars'
-              src='https://img.shields.io/github/stars/themeselection/materio-mui-react-nextjs-admin-template-free?style=social'
-            />
-          </Box>
-        )}
         <ModeToggler settings={settings} saveSettings={saveSettings} />
-        <NotificationDropdown />
-        <UserDropdown />
+        {currentAccount ? (
+          <div className="flex items-center">
+            <p className="mr-6 border px-4 py-2">{accountBalance} ALGO</p>
+            <h4 onClick={disconnectAccount} className="cursor-pointer">{shortenAddress(currentAccount)}</h4>
+          </div>
+
+        ) : (
+          <button className="px-4 py-2 text-lg border border-orange-600 text-orange-600" onClick={setCurrentAccount}>Connect Wallet</button>
+        )}
       </Box>
     </Box>
   )

@@ -21,59 +21,88 @@ const navigation = (): VerticalNavItemsType => {
       path: '/'
     },
     {
-      title: 'Account Settings',
+      sectionTitle: 'Squads'
+    },
+    {
+      title: 'View My Squads',
       icon: AccountCogOutline,
       path: '/account-settings'
     },
     {
-      sectionTitle: 'Pages'
+      sectionTitle: 'Leagues'
     },
     {
-      title: 'Login',
-      icon: Login,
-      path: '/pages/login',
-      openInNewTab: true
+      title: 'Live Leagues',
+      icon: AccountCogOutline,
+      path: '/account-settings'
     },
     {
-      title: 'Register',
-      icon: AccountPlusOutline,
-      path: '/pages/register',
-      openInNewTab: true
+      title: 'Upcoming Leagues',
+      icon: AccountCogOutline,
+      path: '/account-settings'
     },
     {
-      title: 'Error',
-      icon: AlertCircleOutline,
-      path: '/pages/error',
-      openInNewTab: true
+      title: 'Finished Leagues',
+      icon: AccountCogOutline,
+      path: '/account-settings'
     },
     {
-      sectionTitle: 'User Interface'
+      sectionTitle: 'Settings'
     },
     {
-      title: 'Typography',
-      icon: FormatLetterCase,
-      path: '/typography'
+      title: 'Account Settings',
+      icon: AccountCogOutline,
+      path: '/account-settings'
     },
-    {
-      title: 'Icons',
-      path: '/icons',
-      icon: GoogleCirclesExtended
-    },
-    {
-      title: 'Cards',
-      icon: CreditCardOutline,
-      path: '/cards'
-    },
-    {
-      title: 'Tables',
-      icon: Table,
-      path: '/tables'
-    },
-    {
-      icon: CubeOutline,
-      title: 'Form Layouts',
-      path: '/form-layouts'
-    }
+    // {
+    //   sectionTitle: 'Pages'
+    // },
+    // {
+    //   title: 'Login',
+    //   icon: Login,
+    //   path: '/pages/login',
+    //   openInNewTab: true
+    // },
+    // {
+    //   title: 'Register',
+    //   icon: AccountPlusOutline,
+    //   path: '/pages/register',
+    //   openInNewTab: true
+    // },
+    // {
+    //   title: 'Error',
+    //   icon: AlertCircleOutline,
+    //   path: '/pages/error',
+    //   openInNewTab: true
+    // },
+    // {
+    //   sectionTitle: 'User Interface'
+    // },
+    // {
+    //   title: 'Typography',
+    //   icon: FormatLetterCase,
+    //   path: '/typography'
+    // },
+    // {
+    //   title: 'Icons',
+    //   path: '/icons',
+    //   icon: GoogleCirclesExtended
+    // },
+    // {
+    //   title: 'Cards',
+    //   icon: CreditCardOutline,
+    //   path: '/cards'
+    // },
+    // {
+    //   title: 'Tables',
+    //   icon: Table,
+    //   path: '/tables'
+    // },
+    // {
+    //   icon: CubeOutline,
+    //   title: 'Form Layouts',
+    //   path: '/form-layouts'
+    // }
   ]
 }
 
