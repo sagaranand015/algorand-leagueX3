@@ -16,9 +16,9 @@ const FooterContent = () => {
         <Box component='span' sx={{ color: 'error.main' }}>
           ❤️
         </Box>
-        {` by `}
+        {` for `}
         <Link target='_blank' href='https://themeselection.com/'>
-          ThemeSelection
+          Algorand Gitcoin
         </Link>
       </Typography>
       {hidden ? null : (
@@ -29,18 +29,15 @@ const FooterContent = () => {
           >
             MIT License
           </Link>
-          <Link target='_blank' href='https://themeselection.com/'>
-            More Themes
-          </Link>
           <Link
             target='_blank'
-            href='https://github.com/themeselection/materio-mui-react-nextjs-admin-template-free/blob/main/README.md'
+            href='https://github.com/sagaranand015/algorand-leagueX3/blob/main/README.md'
           >
-            Documentation
+            Project Documentation
           </Link>
           <Link
             target='_blank'
-            href='https://github.com/themeselection/materio-mui-react-nextjs-admin-template-free/issues'
+            href='https://twitter.com/sagaranand015'
           >
             Support
           </Link>

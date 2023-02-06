@@ -24,12 +24,11 @@ import SalesByCountries from 'src/views/dashboard/SalesByCountries'
 import { useAuth } from 'src/configs/authProvider'
 import { useEffect, useState } from 'react'
 import algosdk from 'algosdk'
+import { METHODS } from 'http'
+import HelpNotificationCard from 'src/views/cards/HelpNotificationCard'
 
-const Dashboard = () => {
-
-  const client = new algosdk.Algodv2("", "https://testnet-api.algonode.cloud", "");
-
-  const { currentAccount, setCurrentAccount, disconnectAccount } = useAuth()
+const Dashboard = (props: any) => {
+  const { currentAccount, setCurrentAccount, disconnectAccount, apiToken, setApiToken } = useAuth()
   const [accountConnected, setAccountConnected] = useState(false)
 
   useEffect(() => {
@@ -41,11 +40,35 @@ const Dashboard = () => {
     }
   }, [currentAccount])
 
+  useEffect(() => {
+    console.log("current apiToken on dashboard page is: ", apiToken)
+    if (currentAccount) {
+      setApiToken(currentAccount)
+    } else {
+      setApiToken(null)
+    }
+  }, [accountConnected])
+
   return (
     <div>
-      {accountConnected ? <div>ok done</div> : <div>not connected!</div>}
+      {accountConnected && apiToken ? (
+        <ApexChartWrapper>
+
+        </ApexChartWrapper>
+      ) :
+        (
+          <HelpNotificationCard heading='Connect Wallet' content='Please connect your wallet to continue!' clickButtonText='Connect Wallet' clickButton={setCurrentAccount} />
+        )
+      }
     </div >
   )
+}
+
+export async function getServerSideProps(context: any) {
+  // fetch the blog posts from the mock API
+  return {
+    props: {}
+  };
 }
 
 export default Dashboard

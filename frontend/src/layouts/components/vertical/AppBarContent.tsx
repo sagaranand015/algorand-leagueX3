@@ -20,6 +20,7 @@ import NotificationDropdown from 'src/@core/layouts/components/shared-components
 import { useAuth } from 'src/configs/authProvider'
 import { useEffect, useState } from 'react'
 import algosdk from 'algosdk'
+import { Button } from '@mui/material'
 
 interface Props {
   hidden: boolean
@@ -39,7 +40,7 @@ const AppBarContent = (props: Props) => {
 
   const client = new algosdk.Algodv2("", "https://testnet-api.algonode.cloud", "");
 
-  const { currentAccount, setCurrentAccount, disconnectAccount } = useAuth()
+  const { currentAccount, setCurrentAccount, disconnectAccount, apiToken, setApiToken } = useAuth()
   const [accountBalance, setAccountBalance] = useState(0)
 
   useEffect(() => {
@@ -73,7 +74,7 @@ const AppBarContent = (props: Props) => {
           </div>
 
         ) : (
-          <button className="px-4 py-2 text-lg border border-orange-600 text-orange-600" onClick={setCurrentAccount}>Connect Wallet</button>
+          <Button variant='contained' sx={{ padding: theme => theme.spacing(1.75, 5.5) }} onClick={setCurrentAccount}>Connect Wallet</Button>
         )}
       </Box>
     </Box>

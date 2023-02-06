@@ -17,7 +17,7 @@ type ThemeConfig = {
 
 const themeConfig: ThemeConfig = {
   // ** Layout Configs
-  templateName: 'Bookmarking' /* App Name */,
+  templateName: 'LeagueX3' /* App Name */,
   mode: 'dark' /* light | dark */,
   contentWidth: 'boxed' /* full | boxed */,
 

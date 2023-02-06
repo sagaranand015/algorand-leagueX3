@@ -8,12 +8,16 @@ interface AuthProviderValue {
     currentAccount: string | null;
     setCurrentAccount: () => Promise<void> | null;
     disconnectAccount: () => void | null;
+    apiToken: string | null,
+    setApiToken: (addr: string | null) => Promise<void> | null,
 }
 
 const defVal: AuthProviderValue = {
     currentAccount: "" || null,
     setCurrentAccount: () => null,
-    disconnectAccount: () => null
+    disconnectAccount: () => null,
+    apiToken: null,
+    setApiToken: () => null,
 }
 
 const AuthContext = React.createContext(defVal);
@@ -25,6 +29,7 @@ export const connector = new WalletConnect({
 
 function AuthProvider(props: any) {
     const [currentAccount, setCurrentAccount] = useState<string>("")
+    const [apiToken, setApiToken] = useState<string>("")
 
     const checkWalletIsConnected = async () => {
 
@@ -33,6 +38,7 @@ function AuthProvider(props: any) {
             const { accounts } = connector;
             const address = accounts[0];
             setCurrentAccount(address);
+            apiAuthTokenHandler(address)
         }
     }
 
@@ -70,8 +76,28 @@ function AuthProvider(props: any) {
         });
     }
 
+    const apiAuthTokenHandler = async (user_address: string | null) => {
+        if (!user_address) {
+            return
+        }
+        const b = {
+            "user_address": user_address,
+        }
+        const res = await fetch('http://localhost:8080/user/auth', {
+            method: 'POST',
+            body: JSON.stringify(b),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+        const data = await res.json();
+        if (data && data.status) {
+            setApiToken(data.token)
+        }
+    }
+
     return (
-        <AuthContext.Provider value={{ currentAccount, setCurrentAccount: connectWalletHandler, disconnectAccount: disconnectWalletHandler }}>{props.children}</AuthContext.Provider>
+        <AuthContext.Provider value={{ currentAccount, setCurrentAccount: connectWalletHandler, disconnectAccount: disconnectWalletHandler, apiToken, setApiToken: apiAuthTokenHandler }}>{props.children}</AuthContext.Provider>
     );
 }
 
