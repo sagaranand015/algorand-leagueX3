@@ -1,0 +1,45 @@
+{
+    "team_name": "AUSTRALIA",
+    "players": [
+        {
+            "appId": 157187736,
+            "name": "Steve Smith",
+            "metadata": "ipfs://bafkreieu5hxn662idqac6htp7pyd6gmelkhopgmiw22l5dzhyfkrghy2le",
+            "rating": "10",
+            "role": "Batsman",
+            "isPlaying": true
+        },
+        {
+            "appId": 157187736,
+            "name": "Marcus L",
+            "metadata": "ipfs://bafkreieu5hxn662idqac6htp7pyd6gmelkhopgmiw22l5dzhyfkrghy2le",
+            "rating": "9",
+            "role": "Batsman",
+            "isPlaying": true
+        },
+        {
+            "appId": 157187736,
+            "name": "David Warner",
+            "metadata": "ipfs://bafkreieu5hxn662idqac6htp7pyd6gmelkhopgmiw22l5dzhyfkrghy2le",
+            "rating": "10",
+            "role": "Batsman",
+            "isPlaying": true
+        },
+        {
+            "appId": 157187736,
+            "name": "Patt Cummins",
+            "metadata": "ipfs://bafkreieu5hxn662idqac6htp7pyd6gmelkhopgmiw22l5dzhyfkrghy2le",
+            "rating": "10",
+            "role": "Bowler",
+            "isPlaying": true
+        },
+        {
+            "appId": 157187736,
+            "name": "Alex Carry",
+            "metadata": "ipfs://bafkreieu5hxn662idqac6htp7pyd6gmelkhopgmiw22l5dzhyfkrghy2le",
+            "rating": "10",
+            "role": "Wicketkeeper",
+            "isPlaying": true
+        }
+    ]
+}

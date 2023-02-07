@@ -69,10 +69,9 @@ const AppBarContent = (props: Props) => {
         <ModeToggler settings={settings} saveSettings={saveSettings} />
         {currentAccount ? (
           <div className="flex items-center">
-            <p className="mr-6 border px-4 py-2">{accountBalance} ALGO</p>
+            {/* <p className="mr-6 border px-4 py-2">{accountBalance} ALGO</p> */}
             <h4 onClick={disconnectAccount} className="cursor-pointer">{shortenAddress(currentAccount)}</h4>
           </div>
-
         ) : (
           <Button variant='contained' sx={{ padding: theme => theme.spacing(1.75, 5.5) }} onClick={setCurrentAccount}>Connect Wallet</Button>
         )}

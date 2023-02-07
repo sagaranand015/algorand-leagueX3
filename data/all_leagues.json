@@ -1,0 +1,28 @@
+{
+    "leagues": [
+        {
+            "appId": 157187736,
+            "leagueName": "LudhianaLeague01",
+            "leagueMetadata": "ipfs://bafkreieu5hxn662idqac6htp7pyd6gmelkhopgmiw22l5dzhyfkrghy2le",
+            "competitionName": "LudhianaLocalMatch01",
+            "isRunning": true,
+            "isFinished": false
+        },
+        {
+            "appId": 157187737,
+            "leagueName": "LudhianaLeague02",
+            "leagueMetadata": "ipfs://bafkreieu5hxn662idqac6htp7pyd6gmelkhopgmiw22l5dzhyfkrghy2le",
+            "competitionName": "LudhianaLocalMatch02",
+            "isRunning": false,
+            "isFinished": true
+        },
+        {
+            "appId": 157187738,
+            "leagueName": "LudhianaLeague03",
+            "leagueMetadata": "ipfs://bafkreieu5hxn662idqac6htp7pyd6gmelkhopgmiw22l5dzhyfkrghy2le",
+            "competitionName": "LudhianaLocalMatch03",
+            "isRunning": false,
+            "isFinished": true
+        }
+    ]
+}

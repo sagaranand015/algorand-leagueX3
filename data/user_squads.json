@@ -1,0 +1,26 @@
+{
+    "userAddress": "SZ3K22H6MZ3A3ORYIVTAYMQMMBWVFOMJWXR3QCODNMJBQRIKBXN5PXX6AI",
+    "squads": [
+        {
+            "datastoreAppId": 156788073,
+            "leagueAppId": 157187736,
+            "leagueName": "LudhianaLeague01",
+            "competitionName": "LudhianaLocalMatch01",
+            "squadDetails": "ipfs://bafkreieu5hxn662idqac6htp7pyd6gmelkhopgmiw22l5dzhyfkrghy2le"
+        },
+        {
+            "datastoreAppId": 156788073,
+            "leagueAppId": 157187736,
+            "leagueName": "LudhianaLeague02",
+            "competitionName": "LudhianaLocalMatch02",
+            "squadDetails": "ipfs://bafkreieu5hxn662idqac6htp7pyd6gmelkhopgmiw22l5dzhyfkrghy2le"
+        },
+        {
+            "datastoreAppId": 156788073,
+            "leagueAppId": 157187736,
+            "leagueName": "LudhianaLeague03",
+            "competitionName": "LudhianaLocalMatch03",
+            "squadDetails": "ipfs://bafkreieu5hxn662idqac6htp7pyd6gmelkhopgmiw22l5dzhyfkrghy2le"
+        }
+    ]
+}

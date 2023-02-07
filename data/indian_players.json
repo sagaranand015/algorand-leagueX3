@@ -1,0 +1,29 @@
+{
+    "team_name": "INDIA",
+    "players": [
+        {
+            "appId": 157187736,
+            "name": "Virat Kohli",
+            "metadata": "ipfs://bafkreieu5hxn662idqac6htp7pyd6gmelkhopgmiw22l5dzhyfkrghy2le",
+            "rating": "10",
+            "role": "Batsman",
+            "isPlaying": true
+        },
+        {
+            "appId": 157187736,
+            "name": "Rohit Sharma",
+            "metadata": "ipfs://bafkreieu5hxn662idqac6htp7pyd6gmelkhopgmiw22l5dzhyfkrghy2le",
+            "rating": "10",
+            "role": "Batsman",
+            "isPlaying": true
+        },
+        {
+            "appId": 157187736,
+            "name": "Hardik Pandya",
+            "metadata": "ipfs://bafkreieu5hxn662idqac6htp7pyd6gmelkhopgmiw22l5dzhyfkrghy2le",
+            "rating": "10",
+            "role": "Batsman",
+            "isPlaying": true
+        }
+    ]
+}
