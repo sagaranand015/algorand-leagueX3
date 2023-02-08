@@ -9,6 +9,8 @@ import CreditCardOutline from 'mdi-material-ui/CreditCardOutline'
 import AccountPlusOutline from 'mdi-material-ui/AccountPlusOutline'
 import AlertCircleOutline from 'mdi-material-ui/AlertCircleOutline'
 import GoogleCirclesExtended from 'mdi-material-ui/GoogleCirclesExtended'
+import MdiListBox from 'mdi-material-ui/ViewListOutline'
+import { SendOutline } from 'mdi-material-ui'
 
 // ** Type import
 import { VerticalNavItemsType } from 'src/@core/layouts/types'
@@ -21,30 +23,25 @@ const navigation = (): VerticalNavItemsType => {
       path: '/'
     },
     {
+      sectionTitle: 'Leagues'
+    },
+    {
+      title: 'My Leagues',
+      icon: SendOutline,
+      path: '/my-leagues'
+    },
+    {
+      title: 'All Leagues',
+      icon: SendOutline,
+      path: '/all-leagues'
+    },
+    {
       sectionTitle: 'Squads'
     },
     {
       title: 'View My Squads',
-      icon: AccountCogOutline,
-      path: '/account-settings'
-    },
-    {
-      sectionTitle: 'Leagues'
-    },
-    {
-      title: 'Live Leagues',
-      icon: AccountCogOutline,
-      path: '/account-settings'
-    },
-    {
-      title: 'Upcoming Leagues',
-      icon: AccountCogOutline,
-      path: '/account-settings'
-    },
-    {
-      title: 'Finished Leagues',
-      icon: AccountCogOutline,
-      path: '/account-settings'
+      icon: MdiListBox,
+      path: '/my-squads'
     },
     {
       sectionTitle: 'Settings'

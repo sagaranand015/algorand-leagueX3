@@ -24,9 +24,11 @@ class SquadsApi:
                     HTTPStatus.BAD_REQUEST,
                 )
 
-            user_addr = auth_token['sub']            
+            user_addr = auth_token['sub']    
+            # TODO: Add SC client call here to get the real data. Mocked now        
+            # resp = self.datastore_client.ge
             return (
-                jsonify(dict(status=True, squads="ipfs://bafkreiebjpir2usfcjkpvwdk5lsbw5b6s2bumiulkijwicbfihk3idu4oi")),
+                jsonify(dict(status=True, squads="ipfs://bafkreietnbruyx5hjyboxeiwbdwdou2obnljb5fikoov3mn2ayh6gmyup4")),
                 HTTPStatus.OK,
             )
         except Exception as e:

@@ -2,27 +2,42 @@
     "leagues": [
         {
             "appId": 157187736,
+            "leagueId": 1,
             "leagueName": "LudhianaLeague01",
+            "leagueImg": "ipfs://bafybeihbmt4n5gr6qifjhu6haxrx433rzmvpw4smvywt2xf4nn3gqhvckq",
             "leagueMetadata": "ipfs://bafkreieu5hxn662idqac6htp7pyd6gmelkhopgmiw22l5dzhyfkrghy2le",
             "competitionName": "LudhianaLocalMatch01",
+            "teamA": "India",
+            "teamB": "Australia",
             "isRunning": true,
-            "isFinished": false
+            "isFinished": false,
+            "leaguePrice": "50"
         },
         {
             "appId": 157187737,
+            "leagueId": 2,
             "leagueName": "LudhianaLeague02",
+            "leagueImg": "ipfs://bafybeihbmt4n5gr6qifjhu6haxrx433rzmvpw4smvywt2xf4nn3gqhvckq",
             "leagueMetadata": "ipfs://bafkreieu5hxn662idqac6htp7pyd6gmelkhopgmiw22l5dzhyfkrghy2le",
             "competitionName": "LudhianaLocalMatch02",
             "isRunning": false,
-            "isFinished": true
+            "teamA": "India",
+            "teamB": "Australia",
+            "isFinished": true,
+            "leaguePrice": "10"
         },
         {
             "appId": 157187738,
+            "leagueId": 3,
             "leagueName": "LudhianaLeague03",
+            "leagueImg": "ipfs://bafybeihbmt4n5gr6qifjhu6haxrx433rzmvpw4smvywt2xf4nn3gqhvckq",
             "leagueMetadata": "ipfs://bafkreieu5hxn662idqac6htp7pyd6gmelkhopgmiw22l5dzhyfkrghy2le",
             "competitionName": "LudhianaLocalMatch03",
             "isRunning": false,
-            "isFinished": true
+            "teamA": "India",
+            "teamB": "Australia",
+            "isFinished": true,
+            "leaguePrice": "10"
         }
     ]
 }
