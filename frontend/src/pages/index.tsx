@@ -60,11 +60,11 @@ const Dashboard = (props: any) => {
             <Grid item xs={12} md={8}>
               <StatisticsCard />
             </Grid>
-            <Grid item xs={12} md={6} lg={4}>
-              <WeeklyOverview />
-            </Grid>
-            <Grid item xs={12} md={6} lg={4}>
+            <Grid item xs={12} md={6} lg={6}>
               <TotalEarning />
+            </Grid>
+            <Grid item xs={12} md={6} lg={6}>
+              <SalesByCountries />
             </Grid>
           </Grid>
         </ApexChartWrapper>

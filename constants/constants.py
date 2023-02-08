@@ -7,4 +7,4 @@ ROOT_ACCOUNT_MNEMONIC = "point visa rotate quiz rice neutral tenant elephant tos
 # ROOT_ACCOUNT_MNEMONIC = "spot exclude panda catch elegant cigar lottery adult annual journey city whisper appear paper myself girl service clutch word future rude dutch cost about knife"
 
 DATASTORE_APP_ID = 156788073
-LEAGUE_APP_ID = 157187736
+LEAGUE_APP_ID = 157711817

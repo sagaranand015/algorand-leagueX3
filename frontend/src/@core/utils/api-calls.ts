@@ -23,3 +23,23 @@ export async function getUserSquadData(authToken: string | null) {
         }
     }
 }
+
+export async function ParticipateWithUserAddress(authToken: string | null, league_data: string, squad_data: string) {
+    console.log("auth toke is: Bearer ", authToken)
+    if (authToken) {
+        var resp = await fetch('http://localhost:8080/leagues/participate', {
+            method: "POST",
+            body: JSON.stringify({
+                "league_data": league_data,
+                "squad_data": squad_data
+            }),
+            headers: {
+                'Authorization': "Bearer " + authToken,
+                'Content-Type': 'application/json',
+            }
+        })
+        var dataResp = await resp.json()
+        console.log("====== PARTICIPATE api response ois:  ", dataResp)
+        return dataResp
+    }
+}

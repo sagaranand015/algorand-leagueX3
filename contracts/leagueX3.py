@@ -6,6 +6,7 @@ from beaker.lib.storage import Mapping
 
 class UserLeagueData(abi.NamedTuple):
     # Define all data points containing a user's participation record
+    league_data: abi.Field[abi.DynamicBytes]
     squad_data: abi.Field[abi.DynamicBytes]
     pos_number: abi.Field[abi.Uint64]
     is_winner: abi.Field[abi.Bool]
@@ -43,7 +44,7 @@ class LeagueX3(Application):
         )
 
     @external
-    def participate_with_user_squad(self, squad_data: abi.DynamicBytes, *, output: UserLeagueData):
+    def participate_with_user_squad(self, user_addr: abi.Address, league_data: abi.DynamicBytes, squad_data: abi.DynamicBytes, *, output: UserLeagueData):
         """
         Adds a new squad link to the box storage keyed by user address
         """
@@ -52,7 +53,7 @@ class LeagueX3(Application):
             Assert(And(self.league_name.exists(), Not(self.league_name.get() == empty_string.get())), comment="The app has not been bootstraped properly. League Name missing"),
             Assert(And(self.league_metadata.exists(), Not(self.league_metadata.get() == empty_string.get())), comment="The app has not been bootstraped properly. League Metadata missing"),
             Assert(And(self.competition_name.exists(), Not(self.competition_name.get() == empty_string.get())), comment="The app has not been bootstraped properly. Compeition name missing"),
-            contents := BoxGet(Txn.sender()),
+            contents := BoxGet(user_addr.get()),
             If(contents.hasValue())
             .Then(
                 output.decode(contents.value())
@@ -61,19 +62,19 @@ class LeagueX3(Application):
                 (dummy_pos_val := abi.Uint64()).set(int(0)),
                 (dummy_win_val := abi.Bool()).set(False),
                 (is_participated := abi.Bool()).set(True),
-                (u_leaderboard := UserLeagueData()).set(squad_data, dummy_pos_val, dummy_win_val, dummy_pos_val, dummy_pos_val, is_participated),
-                self.user_participation[Txn.sender()].set(u_leaderboard),
-                output.set(squad_data, dummy_pos_val, dummy_win_val, dummy_pos_val, dummy_pos_val, is_participated)
+                (u_leaderboard := UserLeagueData()).set(league_data, squad_data, dummy_pos_val, dummy_win_val, dummy_pos_val, dummy_pos_val, is_participated),
+                self.user_participation[user_addr].set(u_leaderboard),
+                output.set(league_data, squad_data, dummy_pos_val, dummy_win_val, dummy_pos_val, dummy_pos_val, is_participated)
             ),
         )
 
     @external
-    def get_user_participation_data(self, *, output: UserLeagueData):
+    def get_user_participation_data(self, user_addr: abi.Address, *, output: UserLeagueData):
         """
         Returns the participation data in the box storage for the user
         """
         return Seq(
-            contents := BoxGet(Txn.sender()),
+            contents := BoxGet(user_addr.get()),
             Assert(contents.hasValue()),
             output.decode(contents.value()),
         )

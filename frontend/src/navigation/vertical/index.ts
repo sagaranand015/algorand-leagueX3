@@ -43,14 +43,14 @@ const navigation = (): VerticalNavItemsType => {
       icon: MdiListBox,
       path: '/my-squads'
     },
-    {
-      sectionTitle: 'Settings'
-    },
-    {
-      title: 'Account Settings',
-      icon: AccountCogOutline,
-      path: '/account-settings'
-    },
+    // {
+    //   sectionTitle: 'Settings'
+    // },
+    // {
+    //   title: 'Account Settings',
+    //   icon: AccountCogOutline,
+    //   path: '/account-settings'
+    // },
     // {
     //   sectionTitle: 'Pages'
     // },

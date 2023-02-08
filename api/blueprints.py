@@ -52,6 +52,11 @@ def get_leagues_blueprint():
     def _get_all_leagues_wrapper():
         return leagues_api.get_all_leagues()
 
+    
+    @leagues_blueprint.route("/participate", methods=["POST"])
+    def _participate_with_user_address_wrapper():
+        return leagues_api.participate_with_user_address()
+
     return leagues_blueprint
 
 def get_squads_blueprint():

@@ -24,14 +24,15 @@ import TabSecurity from 'src/views/account-settings/TabSecurity'
 // ** Third Party Styles Imports
 import 'react-datepicker/dist/react-datepicker.css'
 
-import { FetchDataFromIpfsLink } from 'src/@core/utils/nftStorage'
+import { FetchDataFromIpfsLink, GetLeagueDataIpfsLink, GetSquadDataIpfsLink } from 'src/@core/utils/nftStorage'
 import { ALL_LEAGUES } from 'src/@core/utils/constants'
 import { Button, CardActions, CardContent, CardMedia, Collapse, Divider, FormControl, FormHelperText, IconButton, InputLabel, MenuItem, Modal, Typography } from '@mui/material'
+import LoadingButton from '@mui/lab/LoadingButton';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import { ChevronDown, ChevronUp } from 'mdi-material-ui'
 import { isValidLeadingWildcardRoute } from '@json-rpc-tools/utils'
 import { useAuth } from 'src/configs/authProvider'
-import { getUserSquadData } from 'src/@core/utils/api-calls'
+import { getUserSquadData, ParticipateWithUserAddress } from 'src/@core/utils/api-calls'
 import TypographyHeadings from 'src/views/typography/TypographyHeadings'
 import TypographyTexts from 'src/views/typography/TypographyTexts'
 
@@ -74,6 +75,7 @@ const AllLeagues = (props: any) => {
   const [squadData, setSquadData] = useState<any>([])
   const [selectedLeague, setSelectedLeague] = useState<ILeagueData>()
   const [selectedSquad, setSelectedSquad] = useState<any>()
+  const [isLoading, settIsLoading] = useState<boolean>(false)
 
   const [modalOpen, setModalOpen] = useState(false);
   const handleModalOpen = () => setModalOpen(true);
@@ -113,7 +115,17 @@ const AllLeagues = (props: any) => {
   }
 
   async function ConfirmParticipation() {
+    settIsLoading(true)
     console.log("confirming participation...", selectedLeague, selectedSquad)
+
+    const l_data = await GetLeagueDataIpfsLink(selectedLeague)
+    const sq_data = await GetSquadDataIpfsLink(selectedSquad)
+
+    const participateResp = await ParticipateWithUserAddress(apiToken, l_data, sq_data)
+    console.log("participate response in page: ", l_data, sq_data, participateResp)
+    settIsLoading(false)
+    setModalOpen(false)
+    alert("Participation Successful. Please navigate to My-leagues page to see your participation")
   }
 
   return (
@@ -150,7 +162,8 @@ const AllLeagues = (props: any) => {
               </FormControl>
             </Grid>
             <Grid item xs={12}>
-              <Button variant='contained' sx={{ py: 2.5, width: '100%', borderTopLeftRadius: 0, borderTopRightRadius: 0 }} onClick={() => ConfirmParticipation()}>
+              <Button variant='contained' sx={{ py: 2.5, width: '100%', borderTopLeftRadius: 0, borderTopRightRadius: 0 }} onClick={() => ConfirmParticipation()} disabled={isLoading}>
+                <LoadingButton loading={isLoading}></LoadingButton>
                 Confirm Participation with {selectedLeague?.leaguePrice} ALGO
               </Button>
             </Grid>

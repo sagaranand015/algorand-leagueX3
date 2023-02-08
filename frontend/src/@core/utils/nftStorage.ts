@@ -35,11 +35,13 @@ export async function UploadNftJson(name: string, description: string, release: 
 export async function GetLeagueDataIpfsLink(league_data: any) {
     const client = GetStorageClient();
     const blob = new Blob([JSON.stringify(league_data)], { type: 'application/json' });
+    console.log("======== storing leagues data", blob)
     return await client.storeBlob(blob);
 }
 
 export async function GetSquadDataIpfsLink(squad_data: any) {
     const client = GetStorageClient();
     const blob = new Blob([JSON.stringify(squad_data)], { type: 'application/json' });
+    console.log("======== storing squads data", blob)
     return await client.storeBlob(blob);
 }
