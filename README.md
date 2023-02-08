@@ -3,6 +3,9 @@
 
 A fantasy sport is a form of game, commonly played on the Internet, in which participants assemble imagined, or virtual teams made up of proxies for genuine professional athletes. These gamers qualify based on their players’ statistical performance in actual games. This performance is transformed into points, which are collated and totaled based on a roster chosen by the manager of each fantasy club. These point systems can be simple enough to be computed manually by a “league commissioner” (blockchain in this case) who supervises and controls the overall league, or they can be collated and calculated using computers that follow genuine professional sport results. In fantasy sports, club owners, like in actual sports, draft, trade, and cut (drop) players. Fantasy sports began in traditional sports like cricket and have recently made their way into esports.
 
+LeagueX3 is the fantasy gaming platform hosted on the Algorand Blockchain to let Algorand users participate in the fantasy game of their choice. LeagueX3 is a series of smart contracts deployed on Algorand, that allows management of fanatsy leagues, user squads participating in leagues, managing leaderboards for several leagues and so on. 
+LeagueX3 aims to become the single stop solution for all fanatsy games hosted on the Algorand blockchain and provide users with the fun of fantasy gaming in the world of OpenWeb and CrypoCurrencies
+
 ### DataStores
 1. We use IPFS and Algorand blockchain to host the seed data required for any conducting any fantasy sports event. 
 2. The approach involves:
